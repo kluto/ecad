@@ -2,10 +2,7 @@ import csv
 import os
 from datetime import datetime
 
-#st_names = ['Austria','Germany','Slovenia','Croatia','Hungary',
-#            'Bosnia and Herzegovina','Serbia','Romania','Montenegro']
-
-st_names = ['SI']
+countries = ['AT','SI','HU','HR','BA','RS','RO']
 wvars = ['tg','rr','sd']
 
 for wvar in wvars:
@@ -22,7 +19,7 @@ for wvar in wvars:
     with open(path, 'r') as f:
         for line in f:
             cty = line[47:49]
-            if cty in st_names:
+            if cty in countries:
                 s_id = line[0:5].strip().zfill(6)
                 #s_id = (6 - len(s_id)) * '0' + s_id
                 name = line[6:45].strip()
